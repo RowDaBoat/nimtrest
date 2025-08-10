@@ -392,6 +392,7 @@ proc addEntity*[T: ComponentTuple](world: var World, components: sink T): Entity
 
   if (arch == nil):
     arch = makeArchetype T # No arch found, we need to make a new one
+    archIndex = world.archetypes.len
     world.archetypes.add arch
 
   let entityId = world.entityPointers.len
